@@ -19,4 +19,6 @@ Route::group([
     $router->resource('etudiants', EtudiantController::class);
     $router->resource('annee-accademiques', AnneeAccademiqueController::class);
 
+    $router->get('/deliberations', 'DeliberationController@index');
+
 });
