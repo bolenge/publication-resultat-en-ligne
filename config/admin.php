@@ -204,6 +204,14 @@ return [
         'cours_table' => 'admin_cours',
         'cours_model' => App\Models\Cours::class,
 
+        // enseignants table and model.
+        'enseignants_table' => 'admin_enseignants',
+        'enseignants_model' => App\Models\Enseignant::class,
+
+        // etudiants table and model.
+        'etudiants_table' => 'admin_etudiants',
+        'etudiants_model' => App\Models\Etudiant::class,
+
         // Pivot table for table above.
         'operation_log_table'    => 'admin_operation_log',
         'user_permissions_table' => 'admin_user_permissions',

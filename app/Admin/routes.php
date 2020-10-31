@@ -16,5 +16,6 @@ Route::group([
     $router->resource('promotions', PromotionController::class);
     $router->resource('cours', CoursController::class);
     $router->resource('enseignants', EnseignantController::class);
+    $router->resource('etudiants', EtudiantController::class);
 
 });
