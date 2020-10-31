@@ -17,5 +17,6 @@ Route::group([
     $router->resource('cours', CoursController::class);
     $router->resource('enseignants', EnseignantController::class);
     $router->resource('etudiants', EtudiantController::class);
+    $router->resource('annee-accademiques', AnneeAccademiqueController::class);
 
 });
