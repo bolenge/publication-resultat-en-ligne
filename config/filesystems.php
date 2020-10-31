@@ -82,4 +82,12 @@ return [
         public_path('storage') => storage_path('app/public'),
     ],
 
+    // Additionnal code
+    'admin' => [
+        'driver' => 'local',
+        'root' => public_path('upload'),
+        'visibility' => 'public',
+        'url' => env('APP_URL').'/public/upload/',
+    ],
+
 ];

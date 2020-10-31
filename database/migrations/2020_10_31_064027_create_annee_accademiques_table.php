@@ -13,7 +13,7 @@ class CreateAnneeAccademiqueTable extends Migration
      */
     public function up()
     {
-        Schema::create('annee_accademique', function (Blueprint $table) {
+        Schema::create('annee_accademiques', function (Blueprint $table) {
             $table->id();
             $table->string('libelle_annee');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateAnneeAccademiqueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('annee_accademique');
+        Schema::dropIfExists('annee_accademiques');
     }
 }

@@ -26,7 +26,8 @@ class AnneeAccademiqueController extends AdminController
     {
         $grid = new Grid(new AnneeAccademique());
 
-
+        $grid->column('id', __('Id'));
+        $grid->column('libelle_annee', __('Libelle Année'));
 
         return $grid;
     }
@@ -40,8 +41,9 @@ class AnneeAccademiqueController extends AdminController
     protected function detail($id)
     {
         $show = new Show(AnneeAccademique::findOrFail($id));
-
-
+    
+        $show->field('id', __('Id'));
+        $show->field('libelle_annee', __('Libelle année'));
 
         return $show;
     }
@@ -55,7 +57,7 @@ class AnneeAccademiqueController extends AdminController
     {
         $form = new Form(new AnneeAccademique());
 
-
+        $form->text('libelle_annee', __('Libelle'));
 
         return $form;
     }
