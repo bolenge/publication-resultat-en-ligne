@@ -27,6 +27,7 @@ class EnseignantController extends AdminController
         $grid = new Grid(new Enseignant());
 
         $grid->column('id', __('Id'));
+        $grid->column('matricule', __('Matricule'));
         $grid->column('nom', __('Nom'));
         $grid->column('postnom', __('Postnom'));
         $grid->column('prenom', __('Prenom'));
@@ -48,6 +49,7 @@ class EnseignantController extends AdminController
         $show = new Show(Enseignant::findOrFail($id));
 
         $show->field('id', __('Id'));
+        $show->field('matricule', __('Matricule'));
         $show->field('nom', __('Nom'));
         $show->field('postnom', __('Postnom'));
         $show->field('prenom', __('Prenom'));
@@ -69,6 +71,7 @@ class EnseignantController extends AdminController
     {
         $form = new Form(new Enseignant());
 
+        $form->text('matricule', __('Matricule'));
         $form->text('nom', __('Nom'));
         $form->text('postnom', __('Postnom'));
         $form->text('prenom', __('Prenom'));
