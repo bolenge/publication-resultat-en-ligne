@@ -22,4 +22,9 @@ Route::group([
     $router->get('/deliberations', 'DeliberationController@index');
     $router->resource('promo-etudiants', PromoEtudiantController::class);
 
+
+    // Api
+    $router->get('/api/etudiants/all', 'EtudiantController@all');
+    $router->get('/api/promotions/all', 'PromotionController@all');
+    $router->get('/api/annee-accademiques/all', 'AnneeAccademiqueController@all');
 });

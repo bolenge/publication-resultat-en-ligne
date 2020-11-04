@@ -92,8 +92,23 @@ class PromoEtudiantController extends AdminController
     protected function form()
     {
         $form = new Form(new PromoEtudiant());
+        $etudiants = $promotions = $annees = [];
 
+        foreach (Etudiant::all('id', 'nom', 'prenom') as $etudiant) {
+            $etudiants[$etudiant->id] = $etudiant->nom.' '.$etudiant->prenom;
+        }
 
+        foreach (Promotion::all() as $promotion) {
+            $promotions[$promotion->id] = $promotion->intitule;
+        }
+
+        foreach (AnneeAccademique::all() as $annee) {
+            $annees[$annee->id] = $annee->libelle_annee;
+        }
+        
+        $form->select('id_etudiant', 'Etudiant')->options($etudiants);
+        $form->select('id_promotion', 'Promotion')->options($promotions);
+        $form->select('id_annee_accademique', 'Année academique')->options($annees);
 
         return $form;
     }

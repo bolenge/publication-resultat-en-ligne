@@ -67,4 +67,11 @@ class PromotionController extends AdminController
 
         return $form;
     }
+
+    public function all(Request $request)
+    {
+        // $q = $request->get('q');
+
+        return Promotion::find();
+    }
 }

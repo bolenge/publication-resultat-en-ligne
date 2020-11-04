@@ -61,4 +61,11 @@ class AnneeAccademiqueController extends AdminController
 
         return $form;
     }
+
+    public function all(Request $request)
+    {
+    $q = $request->get('q');
+
+    return AnneeAccademique::where('libelle_annee', 'like', "%$q%")->paginate(null, ['id', 'libelle_annee']);
+    }
 }
