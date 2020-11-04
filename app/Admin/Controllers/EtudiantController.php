@@ -39,8 +39,7 @@ class EtudiantController extends AdminController
         $grid->column('etat_civil', __('Etat civil'));
         $grid->column('adresse', __('Adresse'));
         $grid->column('profession', __('Profession'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('Date enregistré'));
 
         return $grid;
     }
@@ -68,8 +67,7 @@ class EtudiantController extends AdminController
         $show->field('etat_civil', __('Etat civil'));
         $show->field('adresse', __('Adresse'));
         $show->field('profession', __('Profession'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('created_at', __('Date enregistré'));
 
         return $show;
     }
