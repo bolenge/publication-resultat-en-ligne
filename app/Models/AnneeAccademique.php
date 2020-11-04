@@ -21,4 +21,9 @@ class AnneeAccademique extends Model
         'intitule',
         'description',
     ];
+
+    public function promoEtudiants()
+    {
+        return $this->hasMany(PromoEtudiant::class,'id_annee_accademique');
+    }
 }

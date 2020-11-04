@@ -31,4 +31,9 @@ class Etudiant extends Model
         'adresse',
         'profession',
     ];
+
+    public function promoEtudiants()
+    {
+        return $this->hasMany(PromoEtudiant::class,'id_etudiant');
+    }
 }
