@@ -85,15 +85,23 @@ class EtudiantController extends AdminController
         $form->text('nom', __('Nom'));
         $form->text('postnom', __('Postnom'));
         $form->text('prenom', __('Prenom'));
-        $form->text('sexe', __('Sexe'));
-        $form->text('date_naissance', __('Date naissance'));
+        $form->select('sexe', __('Sexe'))->options([
+            'M' => 'Homme',
+            'F' => 'Femme',
+        ]);
+        $form->date('date_naissance', __('Date naissance'));
         $form->text('lieu_naissance', __('Lieu naissance'));
         $form->text('telephone', __('Telephone'));
         $form->email('email', __('Email'));
-        $form->text('etat_civil', __('Etat civil'));
+        $form->select('etat_civil', __('Etat civil'))->options([
+            'Célibataire' => 'Célibataire',
+            'Fiancé(e)' => 'Fiancé(e)',
+            'Marié(e)' => 'Marié(e)',
+            'Divorcé(e)' => 'Divorcé(e)',
+            'Veuf(ve)' => 'Veuf(ve)',
+        ]);
         $form->text('adresse', __('Adresse'));
         $form->text('profession', __('Profession'));
-        $form->text('password', __('Mot de passe'));
 
         return $form;
     }

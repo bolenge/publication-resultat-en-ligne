@@ -13,7 +13,7 @@ class CreatePromosEtudiantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('promos_etudiants', function (Blueprint $table) {
+        Schema::create('promo_etudiants', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_etudiant')->unsigned();
             $table->bigInteger('id_promotion')->unsigned();
@@ -44,7 +44,7 @@ class CreatePromosEtudiantsTable extends Migration
      */
     public function down()
     {
-        Schema::table('promos_etudiants', function(Blueprint $table) {
+        Schema::table('promo_etudiants', function(Blueprint $table) {
 			$table->dropForeign('promos_etudiants_id_etudiant_foreign');
 			$table->dropForeign('promos_etudiants_id_promotion_foreign');
 			$table->dropForeign('promos_etudiants_id_annee_accademique_foreign');

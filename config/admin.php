@@ -216,6 +216,10 @@ return [
         'annee_accademiques_table' => 'admin_annee_accademiques',
         'annee_accademiques_model' => App\Models\AnneeAccademique::class,
 
+        // promo_etudiant table and model.
+        'promo_etudiants_table' => 'admin_promos_etudiants',
+        'promos_etudiants_model' => App\Models\PromoEtudiant::class,
+
         // Pivot table for table above.
         'operation_log_table'    => 'admin_operation_log',
         'user_permissions_table' => 'admin_user_permissions',
