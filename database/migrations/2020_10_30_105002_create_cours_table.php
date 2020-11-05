@@ -16,8 +16,8 @@ class CreateCoursTable extends Migration
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-            $table->string('volume');
-            $table->string('id_promotion');
+            $table->integer('volume');
+            $table->bigInteger('id_promotion')->unsigned();
             $table->foreign('id_promotion')
                   ->references('id')
                   ->on(('promotions'))
