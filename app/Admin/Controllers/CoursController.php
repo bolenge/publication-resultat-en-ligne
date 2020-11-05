@@ -28,7 +28,7 @@ class CoursController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('libelle', __('Libelle'));
-        $grid->column('volume', __('Volume (Pondération)'));
+        $grid->column('volume', __('Volume Horaire'));
 
         return $grid;
     }

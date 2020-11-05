@@ -8,8 +8,10 @@ use Encore\Admin\Layout\Column;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Layout\Row;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 use App\Models\AnneeAccademique;
+use App\Models\Promotion;
 
 class DeliberationController extends Controller
 {
@@ -24,5 +26,19 @@ class DeliberationController extends Controller
             ->view('admins.deliberation', [
                 'list' => $list_annee_acads
             ]);
+    }
+
+    public function promotions (Content $content, Request $request, $idAnnee) {
+        $promos = Promotion::all();
+        
+        return $content
+            ->title('Délibération')
+            ->description('Liste de promotions')
+            ->row(Dashboard::title())
+            ->view('admins.deliberation_promos', [
+                'idAnnee' => $idAnnee,
+                'list' => $promos
+        ]);
+        
     }
 }

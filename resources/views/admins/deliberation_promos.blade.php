@@ -2,11 +2,11 @@
     @if (!empty($list))
         <div class="row">
             @foreach ($list as $el)
-                <div class="col-lg-3">
+                <div class="col-lg-1">
                     <div class="card">
-                        <div class="card-,o;;;;;">   
+                        <div class="card-body">   
                             <h1>
-                                <a href="/admin/deliberations/annee-accademique/{{ $el->id }}">{{ $el->libelle_annee }}</a>
+                                <a href="/admin/deliberations/annee-accademique/{{ $idAnnee }}/promotions/{{ $el->id }}">{{ $el->intitule }}</a>
                             </h1>
                         </div>
                     </div>

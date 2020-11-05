@@ -20,6 +20,8 @@ Route::group([
     $router->resource('annee-accademiques', AnneeAccademiqueController::class);
 
     $router->get('/deliberations', 'DeliberationController@index');
+    $router->get('/deliberations/annee-accademique/{idAnnee}', 'DeliberationController@promotions');
+    $router->get('/deliberations/annee-accademique/{idAnnee}/promotions/{idPromo}', 'DeliberationController@annee');
     $router->resource('promo-etudiants', PromoEtudiantController::class);
 
 

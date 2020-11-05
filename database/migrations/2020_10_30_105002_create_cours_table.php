@@ -17,6 +17,12 @@ class CreateCoursTable extends Migration
             $table->id();
             $table->string('libelle');
             $table->string('volume');
+            $table->string('id_promotion');
+            $table->foreign('id_promotion')
+                  ->references('id')
+                  ->on(('promotions'))
+                  ->onDelete('restrict')
+                  ->onUpdate('restrict');
             $table->timestamps();
         });
     }
@@ -28,6 +34,10 @@ class CreateCoursTable extends Migration
      */
     public function down()
     {
+        Schema::table('promo_etudiants', function(Blueprint $table) {
+			$table->dropForeign('cours_id_promotion_foreign');
+        });
+        
         Schema::dropIfExists('cours');
     }
 }
