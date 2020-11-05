@@ -79,6 +79,16 @@ class PromoEtudiantController extends AdminController
     {
         $show = new Show(PromoEtudiant::findOrFail($id));
 
+        $show->field('id', __('Id'));
+        $show->field('id_etudiant', __('Etudiant'))->as(function($id_etudiant) {
+            return Etudiant::find($id_etudiant)->nom.' '.Etudiant::find($id_etudiant)->prenom;
+        });
+        $show->field('id_promotion', __('Promotion'))->as(function ($id_promotion) {
+            return Promotion::find($id_promotion)->intitule;
+        });
+        $show->field('id_annee_accademique', __('Année academique'))->as(function ($id_annee_accademique) {
+            return AnneeAccademique::find($id_annee_accademique)->libelle_annee;
+        });
 
 
         return $show;

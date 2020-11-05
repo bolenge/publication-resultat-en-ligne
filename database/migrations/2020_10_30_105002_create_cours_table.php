@@ -23,6 +23,11 @@ class CreateCoursTable extends Migration
                   ->on(('promotions'))
                   ->onDelete('restrict')
                   ->onUpdate('restrict');
+            $table->foreign('id_enseignant')
+                  ->references('id')
+                  ->on(('enseignants'))
+                  ->onDelete('restrict')
+                  ->onUpdate('restrict');
             $table->timestamps();
         });
     }
@@ -36,6 +41,7 @@ class CreateCoursTable extends Migration
     {
         Schema::table('promo_etudiants', function(Blueprint $table) {
 			$table->dropForeign('cours_id_promotion_foreign');
+			$table->dropForeign('cours_id_enseignant_foreign');
         });
         
         Schema::dropIfExists('cours');
